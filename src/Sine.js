@@ -35,9 +35,9 @@ export default function Sine() {
 
     return (
     <>
-        <div className='grow flex gap-3 justify-center items-center drop-shadow-lightBlue '>
+        <div className='grow flex justify-center items-center px-10'>
             <svg width='1500' height='600' xmlns='http://www.w3.org/2000/svg' >
-                <g transform='scale(1.7) translate(20 20)'>
+                <g transform='scale(1.2) translate(20 20)'>
                     <text x="0" y="100">
                         sin(
                     </text>

@@ -21,13 +21,14 @@ svg {
   stroke: #D9D9D9;
   fill: transparent;
   stroke-width: 3px;
+  filter : drop-shadow(0 30px 30px rgba(69, 144, 246, 0.8));
 }
 text {
   font-family: 'Droid Sans Mono', monospace;
   font-size: 20px;
   fill: #fff;
   stroke: #fff;
-  stroke-width: 1px;
+  stroke-width: 0.3px;
 }
 
 /* .underline {
