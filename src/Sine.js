@@ -1,4 +1,6 @@
+import { Select, SelectItem } from '@nextui-org/react';
 import React, { useState, useEffect } from 'react';
+import { degrees } from './data';
 
 export default function Sine() {
     const [degree, setDegree] = useState(0);
@@ -34,66 +36,113 @@ export default function Sine() {
     })
 
     return (
-    <>
-        <div className='grow flex justify-center items-center px-10'>
-            <svg width='1500' height='600' xmlns='http://www.w3.org/2000/svg' >
-                <g transform='scale(1.2) translate(20 20)'>
-                    <text x="0" y="100">
-                        sin(
-                    </text>
+      <>
+        <div className="flex-col grow flex justify-center items-center px-10">
+          <svg width="1050" height="320" xmlns="http://www.w3.org/2000/svg">
+            <g transform="scale(1.2) translate(20 20)">
+              <text x="0" y="100">
+                sin(
+              </text>
 
-                    {/* connected line */}
-                    <line className='grey' x1={Math.cos(degree / 180 * Math.PI) * 100 + 100 + 110} y1={-Math.sin(degree / 180 * Math.PI) * 100 + 100}
-                        x2={degree + 460} y2={-Math.sin(degree / 180 * Math.PI) * 100 + 100} />
+              {/* connected line */}
+              <line
+                className="grey "
+                x1={Math.cos((degree / 180) * Math.PI) * 100 + 100 + 110}
+                y1={-Math.sin((degree / 180) * Math.PI) * 100 + 100}
+                x2={degree + 460}
+                y2={-Math.sin((degree / 180) * Math.PI) * 100 + 100}
+              />
 
-                    {/* circle */}
-                    <g transform='translate(110 0)'>
-                        <line className='grey' x1="100" y1="100" x2="200" y2="100" />
+              {/* circle */}
+              <g transform="translate(110 0)">
+                <line className="blue" x1="100" y1="100" x2="200" y2="100" />
 
+                <circle className="grey" cx="100" cy="100" r="100" />
+                <path
+                  d={
+                    "M 130 100 A 30 30 0 " +
+                    (degree <= 180 ? "0" : "1") +
+                    " 0" +
+                    (Math.cos((degree / 180) * Math.PI) * 30 + 100) +
+                    " " +
+                    (-Math.sin((degree / 180) * Math.PI) * 30 + 100)
+                  }
+                />
+                <line
+                  className="blue"
+                  x1="100"
+                  y1="100"
+                  x2={Math.cos((degree / 180) * Math.PI) * 100 + 100}
+                  y2={-Math.sin((degree / 180) * Math.PI) * 100 + 100}
+                />
+                <text
+                  x={Math.cos((degree / 180) * Math.PI) * 100 + 100 + 10}
+                  y={-Math.sin((degree / 180) * Math.PI) * 100 + 100}
+                >
+                  {degree}°
+                </text>
+              </g>
 
-                        <circle className='grey' cx="100" cy="100" r="100" />
-                        <path d={'M 130 100 A 30 30 0 ' + (degree <= 180 ? '0' : '1') + ' 0' + (Math.cos(degree / 180 * Math.PI) * 30 + 100) + ' ' + (-Math.sin(degree / 180 * Math.PI) * 30 + 100)} />
-                        <line className='grey' x1="100" y1="100" x2={Math.cos(degree / 180 * Math.PI) * 100 + 100} y2={-Math.sin(degree / 180 * Math.PI) * 100 + 100} />
-                        <text x={Math.cos(degree / 180 * Math.PI) * 100 + 100 + 10} y={-Math.sin(degree / 180 * Math.PI) * 100 + 100}>
-                            {degree}°
-                        </text>
-                    </g>
+              <text x="370" y="100">
+                ) =
+              </text>
 
-                    <text x="370" y="100">
-                        ) =
-                    </text>
+              {/* sine */}
+              <g transform="translate(460 0)">
+                <line className="grey" x1="0" y1="100" x2="360" y2="100" />
 
-                    {/* sine */}
-                    <g transform='translate(460 0)'>
-                        <line className='grey' x1="0" y1="100" x2="360" y2="100" />
-
-                        <polyline
-                            points={Array.from({ length: degree }, (value, key) => {
-                                return key + " " + (-Math.sin(key / 180 * Math.PI) * 100 + 100)
-                            })} />
-                        <text x={degree + 10} y={-Math.sin(degree / 180 * Math.PI) * 100 + 100}>
-                            {sine}
-                        </text>
-                    </g>
-                </g>
-            </svg>
-            <select name="degree" id="degree" onChange={handleDegree} value={degree}>
-                <option value="30">30</option>
-                <option value="60">60</option>
-                <option value="90">90</option>
-                <option value="120">120</option>
-                <option value="150">150</option>
-                <option value="180">180</option>
-                <option value="210">210</option>
-                <option value="240">240</option>
-                <option value="270">270</option>
-                <option value="300">300</option>
-                <option value="330">330</option>
-                <option value="360">360</option>
-            </select>
-        </div>    
-    </>
-    )
+                <polyline
+                  points={Array.from({ length: degree }, (value, key) => {
+                    return (
+                      key + " " + (-Math.sin((key / 180) * Math.PI) * 100 + 100)
+                    );
+                  })}
+                />
+                <text
+                  x={degree + 10}
+                  y={-Math.sin((degree / 180) * Math.PI) * 100 + 100}
+                >
+                  {sine}
+                </text>
+              </g>
+            </g>
+          </svg>
+          <Select
+            label="Select an degree"
+            className="max-w-sm"
+            value={degree}
+            name="degree"
+            id="degree"
+            onChange={handleDegree}
+          >
+            {degrees.map((degree) => (
+              <SelectItem key={degree.value} value={degree.value}>
+                {degree.label}
+              </SelectItem>
+            ))}
+          </Select>
+          {/* <select
+            name="degree"
+            id="degree"
+            onChange={handleDegree}
+            value={degree}
+          >
+            <option value="30">30</option>
+            <option value="60">60</option>
+            <option value="90">90</option>
+            <option value="120">120</option>
+            <option value="150">150</option>
+            <option value="180">180</option>
+            <option value="210">210</option>
+            <option value="240">240</option>
+            <option value="270">270</option>
+            <option value="300">300</option>
+            <option value="330">330</option>
+            <option value="360">360</option>
+          </select> */}
+        </div>
+      </>
+    );
 }
 
 // const SinusDraw = ({ degree }) => (

@@ -2,10 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&display=swap");
 
 * {
-    font-family: 'Space Grotesk', sans-serif;
+  font-family: "Space Grotesk", sans-serif;
 }
 
 .App {
@@ -13,21 +13,30 @@
 }
 
 svg {
-  stroke: #fff;
+  stroke: black;
   fill: transparent;
   stroke-width: 8px;
 }
+
 .grey {
-  stroke: #D9D9D9;
+  stroke: rgb(0, 0, 0);
   fill: transparent;
   stroke-width: 3px;
-  filter : drop-shadow(0 30px 30px rgba(69, 144, 246, 0.8));
+  filter: drop-shadow(0 30px 30px rgba(69, 144, 246, 0.8));
 }
+
+.blue {
+  stroke: rgb(22, 150, 209);
+  fill: transparent;
+  stroke-width: 3px;
+  filter: drop-shadow(0 30px 30px rgba(69, 144, 246, 0.8));
+}
+
 text {
-  font-family: 'Droid Sans Mono', monospace;
+  font-family: "Droid Sans Mono", monospace;
   font-size: 20px;
-  fill: #fff;
-  stroke: #fff;
+  fill: black;
+  stroke: black;
   stroke-width: 0.3px;
 }
 
