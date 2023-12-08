@@ -143,8 +143,7 @@ function App() {
         <div className="flex flex-col text-gray-800 grow p-24 mt-12">
           <div className="flex w-full justify-center">
             <h1 className="text-[5rem] 2xl:text-[6rem] drop-shadow-lightBlue w-3/4 mr-auto ml-[6rem]">
-              Mari kita belajar trigonometri
-              <span className="underline text-blue-600">Sinus</span>
+              Mari kita belajar trigonometri <span className="underline text-blue-600">Sinus</span>
             </h1>
           </div>
           <div className="px-24 py-10 mt-32">
@@ -170,7 +169,7 @@ function App() {
                 className={clsx(
                   "transition duration-300 text-gray-400 cursor-pointer border-0 select-none",
                   select == 0 &&
-                    "border border-b-2 text-blue-500 text-xl border-b-blue-500"
+                    "border border-b-2 !text-blue-500 text-xl border-b-blue-500"
                 )}
                 onClick={() => setSelect(0)}
               >
@@ -180,7 +179,7 @@ function App() {
                 className={clsx(
                   "transition duration-300 text-gray-400 cursor-pointer border-0 select-none",
                   select == 1 &&
-                    "border border-b-2 text-blue-500 text-xl border-b-blue-500"
+                    "border border-b-2 !text-blue-500 text-xl border-b-blue-500"
                 )}
                 onClick={() => setSelect(1)}
               >
@@ -190,7 +189,7 @@ function App() {
                 className={clsx(
                   "transition duration-300 text-gray-400 cursor-pointer border-0 select-none",
                   select == 2 &&
-                    "border border-b-2 text-blue-500 text-xl border-b-blue-500"
+                    "border border-b-2 !text-blue-500 text-xl border-b-blue-500"
                 )}
                 onClick={() => setSelect(2)}
               >
