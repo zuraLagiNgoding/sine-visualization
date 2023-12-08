@@ -44,21 +44,25 @@ export function Nav() {
         >
           Kelompok 1
         </h1>
-        <ul className="flex gap-4 transition duration-700 ease-in-out translate-x-[-45rem] group-hover:translate-x-10">
+        <ul className="flex gap-4 transition duration-700 ease-in-out translate-x-[-47rem] group-hover:translate-x-10">
           <li className="transition duration-300 ease-in-out border-0 hover:border-b-2 cursor-pointer border-b-blue-500">
-            Maliki Azis Azyura
+            <a href="https://zura-portfolio.vercel.app/">Maliki Azis Azyura</a>
           </li>
           <li className="transition duration-300 ease-in-out border-0 hover:border-b-2 cursor-pointer border-b-blue-500">
-            Hadiana Easy Rizqina
+            <a>Hadiana Easy Rizqina</a>
           </li>
           <li className="transition duration-300 ease-in-out border-0 hover:border-b-2 cursor-pointer border-b-blue-500">
-            Farren Hilmi
+            <a>Farren Hilmi</a>
           </li>
           <li className="transition duration-300 ease-in-out border-0 hover:border-b-2 cursor-pointer border-b-blue-500">
-            Anindia Aulia
+            <a href="https://anindiakece.github.io/Website-Anindia/">
+              Anindia Aulia
+            </a>
           </li>
           <li className="transition duration-300 ease-in-out border-0 hover:border-b-2 cursor-pointer border-b-blue-500">
-            Ririn Aulia
+            <a href="https://ririnfebrianiiii.github.io/portfolio/">
+              Ririn Febriani
+            </a>
           </li>
         </ul>
       </div>
@@ -168,7 +172,7 @@ function App() {
         <Nav />
         <div className="flex flex-col text-gray-800 grow p-24 mt-12">
           <div className="flex w-full justify-center">
-            <h1 className="text-[5rem] 2xl:text-[6rem] drop-shadow-lightBlue w-3/4 mr-auto ml-[6rem]">
+            <h1 className="text-[5rem] 2xl:text-[6rem] z-[1] drop-shadow-lightBlue w-3/4 mr-auto ml-[6rem]">
               Mari kita belajar trigonometri <span className="underline text-blue-600">Sinus</span>
             </h1>
           </div>
