@@ -108,7 +108,7 @@ export default function Sine() {
             </g>
           </svg>
           <Select
-            label="Select an degree"
+            label="Select a degree"
             className="max-w-sm"
             value={degree}
             name="degree"

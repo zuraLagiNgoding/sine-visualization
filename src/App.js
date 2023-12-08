@@ -31,14 +31,43 @@ export function Nav() {
   return (
     <div
       className={clsx(
-        "transition-all duration-150 fixed w-full px-32 py-5 text-lg text-black font-bold flex justify-between bg-white z-10 ",
-        navState && "drop-shadow-lightBlueSmall px-36 py-7"
+        "transition-all duration-150 fixed w-full pr-32 py-5 text-lg text-black font-bold flex justify-between bg-white z-10 ",
+        navState && "drop-shadow-lightBlueSmall pr-36 py-7"
       )}
     >
-      <h1 className="">Kelompok 1</h1>
-      <i className="cursor-pointer">
+      <div className="flex group">
+        <h1
+          className={clsx(
+            "transition duration-400 text-lg ease-in-out group-hover:text-blue-500 bg-white z-10 text-right w-[20rem] px-2",
+            navState && "!w-[22rem] !text-2xl"
+          )}
+        >
+          Kelompok 1
+        </h1>
+        <ul className="flex gap-4 transition duration-700 ease-in-out translate-x-[-45rem] group-hover:translate-x-10">
+          <li className="transition duration-300 ease-in-out border-0 hover:border-b-2 cursor-pointer border-b-blue-500">
+            Maliki Azis Azyura
+          </li>
+          <li className="transition duration-300 ease-in-out border-0 hover:border-b-2 cursor-pointer border-b-blue-500">
+            Hadiana Easy Rizqina
+          </li>
+          <li className="transition duration-300 ease-in-out border-0 hover:border-b-2 cursor-pointer border-b-blue-500">
+            Farren Hilmi
+          </li>
+          <li className="transition duration-300 ease-in-out border-0 hover:border-b-2 cursor-pointer border-b-blue-500">
+            Anindia Aulia
+          </li>
+          <li className="transition duration-300 ease-in-out border-0 hover:border-b-2 cursor-pointer border-b-blue-500">
+            Ririn Aulia
+          </li>
+        </ul>
+      </div>
+      <a
+        className="cursor-pointer"
+        href="https://github.com/zuraLagiNgoding/sine-visualization"
+      >
         <AiFillGithub size="32" className="fill-black" />
-      </i>
+      </a>
     </div>
   );
 }
@@ -53,12 +82,10 @@ export function Rumus() {
       </div>
       <p className="2xl:px-56 mt-12 text-xl text-gray-800">
         Rumus sinus (sin) dalam trigonometri digunakan untuk menghitung
-        hubungan antara
-        <span className=" text-blue-600">
+        hubungan antara <span className=" text-blue-600">
           panjang sisi yang berlawanan dengan suatu sudut (θ) dalam
           segitiga
-        </span>
-        dengan panjang hipotenusa. Rumusnya adalah:
+        </span> dengan panjang hipotenusa. Rumusnya adalah:
       </p>
       <img src="/rumus.png" className="w-[28rem] " />
       <p className="2xl:px-56 text-xl text-gray-800">
@@ -98,8 +125,7 @@ export function Kuadran() {
       </div>
       <img src="/kuadran.png" className="w-[28rem] mt-12" />
       <p className="2xl:px-56 mt-6 text-xl text-gray-800">
-        Kuadran sinus merujuk pada tanda
-        <span className=" text-blue-600">(positif atau negatif)</span> dari
+        Kuadran sinus merujuk pada tanda <span className=" text-blue-600">(positif atau negatif)</span> dari
         nilai sinus suatu sudut dalam berbagai kuadran pada sistem koordinat
         kartesian. Secara umum:
       </p>
@@ -148,11 +174,10 @@ function App() {
           </div>
           <div className="px-24 py-10 mt-32">
             <h1 className="text-6xl font-semibold drop-shadow-lightBlue">
-              <span className="text-blue-600">Sinus</span> itu apasih?
+              <span className="text-blue-600">Sinus</span> itu apa sih?
             </h1>
             <p className="text-xl text-gray-800 mt-12 text-justify">
-              Sine atau dalam bahasa Indonesia sering disebut dengan
-              <span className="text-blue-600">"sinus"</span> adalah sebuah
+              Sine atau dalam bahasa Indonesia sering disebut dengan <span className="text-blue-600">"sinus"</span> adalah sebuah
               fungsi matematika yang menghubungkan perbandingan panjang sisi
               yang berlawanan dengan sudut tertentu dalam segitiga siku-siku
               dengan panjang sisi terpanjang.
