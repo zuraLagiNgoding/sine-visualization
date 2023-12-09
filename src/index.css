@@ -22,6 +22,11 @@ code {
   animation: blink 1s ease 0s 1 normal forwards;
 }
 
+.custom-background::before {
+  background: url("/public/grid.jpg") repeat center;
+  background-size: 18rem;
+}
+
 @keyframes blink {
   100% {
 	opacity: 1;
